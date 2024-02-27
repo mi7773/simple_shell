@@ -1,7 +1,5 @@
 #include <sys/wait.h>
 #include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -19,14 +17,7 @@ void myexe(char **ca)
 	}
 	else if (frpid == 0)
 	{
-		int er;
-
-		er = execve(ca[0], ca, environ);
-		if (er == -1)
-		{
-			perror(ca[0]);
-			exit(EXIT_FAILURE);
-		}
+		execve(ca[0], ca, 0);
 	}
 	else
 	{
