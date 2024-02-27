@@ -13,10 +13,6 @@ void myerr(int i, char *av0, char *ca0)
 
 	write(STDOUT_FILENO, av0, j);
 	write(STDOUT_FILENO, ": ", 2);
-	numwr(i);
-	write(STDOUT_FILENO, ": ", 2);
-	j = findl(ca0);
-	write(STDOUT_FILENO, ca0, j);
-	write(STDOUT_FILENO, ": not found", 11);
+	write(STDOUT_FILENO, "No such file or directory", 25);
 	write(STDOUT_FILENO, "\n", 1);
 }
