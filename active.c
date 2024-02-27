@@ -16,7 +16,7 @@ int active(char *av0)
 	do {
 		char *lineptr = 0, **ca = 0, **pa = 0;
 
-		write(STDOUT_FILENO, "$ ", 2);
+		write(STDOUT_FILENO, "\n$ ", 3);
 		lineptr = mygetl();
 		if (lineptr == 0)
 		{
