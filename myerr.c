@@ -10,6 +10,8 @@
 void myerr(int i, char *av0, char *ca0)
 {
 	int j = findl(av0);
+	(void) i;
+	(void) ca0;
 
 	write(STDOUT_FILENO, av0, j);
 	write(STDOUT_FILENO, ": ", 2);
