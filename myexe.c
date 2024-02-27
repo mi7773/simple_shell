@@ -17,7 +17,7 @@ void myexe(char **ca)
 	}
 	else if (frpid == 0)
 	{
-		execve(ca[0], ca, 0);
+		execve(ca[0], ca, environ);
 	}
 	else
 	{
