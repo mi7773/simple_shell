@@ -9,6 +9,10 @@ int myexit(char *ca0)
 {
 	int i;
 
+	if (ca0 == 0)
+	{
+		return (0);
+	}
 	i = 0;
 	while (ca0[i] == "exit="[i])
 	{
