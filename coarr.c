@@ -18,7 +18,7 @@ char **coarr(char *buf)
 	{
 		return (0);
 	}
-	ca = mystok(buf, " \n", ca);
+	ca = mystok(buf, " \n\t", ca);
 
 	return (ca);
 }
