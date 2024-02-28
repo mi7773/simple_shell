@@ -14,6 +14,7 @@ int nactive(char *av0)
 {
 	char *lineptr = 0, **ca = 0, **pa = 0, **colir;
 	int i = 1, j, r = 0;
+	(void) av0;
 
 	lineptr = myread();
 	colir = coli(lineptr);
@@ -37,7 +38,7 @@ int nactive(char *av0)
 		}
 		else if (ca[0] != 0)
 		{
-			myerr(i, av0, ca[0]);
+			perror(ca[0]);
 		}
 		j++;
 		i++;
