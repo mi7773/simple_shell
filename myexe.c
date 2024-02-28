@@ -7,8 +7,9 @@
 /**
  * myexe - draft
  * @ca: draft
+ * @av0: draft
  */
-void myexe(char **ca)
+void myexe(char **ca, char *av0)
 {
 	pid_t frpid;
 	int status;
@@ -19,7 +20,13 @@ void myexe(char **ca)
 	}
 	else if (frpid == 0)
 	{
-		execve(ca[0], ca, environ);
+		int er;
+		er = execve(ca[0], ca, environ);
+		if (er == -1)
+		{
+			perror(av0);
+			exit(127);
+		}
 	}
 	else
 	{

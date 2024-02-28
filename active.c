@@ -32,7 +32,7 @@ int active(char *av0)
 		}
 		else if (mystat(ca, pa) == 0)
 		{
-			myexe(ca);
+			myexe(ca, av0);
 		}
 		else if (mystat(ca, pa) == 2)
 		{

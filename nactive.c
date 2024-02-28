@@ -29,7 +29,7 @@ int nactive(char *av0)
 		}
 		else if (mystat(ca, pa) == 0)
 		{
-			myexe(ca);
+			myexe(ca, av0);
 		}
 		else if (mystat(ca, pa) == 2)
 		{
@@ -38,7 +38,7 @@ int nactive(char *av0)
 		}
 		else if (ca[0] != 0)
 		{
-			perror(av0);	
+			perror(av0);
 			r = 127;
 		}
 		j++;

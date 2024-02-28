@@ -16,7 +16,7 @@ char *geten(char *gpr, char *en);
 void myswap(char *de, char *so);
 void myerr(int i, char *av0, char *ca0);
 void numwr(int i);
-void myexe(char **ca);
+void myexe(char **ca, char *av0);
 char *mygetl(void);
 char **mystok(char *s, char *d, char **r);
 char *myread(void);
