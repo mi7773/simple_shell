@@ -7,14 +7,17 @@
  */
 void myswap(char *de, char *so)
 {
+	int i;
+
 	if (so == 0)
 	{
+		*de = 0;
 		return;
 	}
-	while (*so)
+	i = 0;
+	while (so[i])
 	{
-		*de = *so;
-		de++;
-		so++;
+		de[i] = so[i];
+		i++;
 	}
 }

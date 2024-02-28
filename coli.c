@@ -10,7 +10,7 @@
 char **coli(char *lineptr)
 {
 	int i;
-	char **colir, *str;
+	char **colir = 0;
 
 	i = cdel(lineptr, '\n');
 	colir = (char **) malloc(sizeof(char *) * (i + 1));
@@ -18,15 +18,7 @@ char **coli(char *lineptr)
 	{
 		return (0);
 	}
-	str = strtok(lineptr, "\n");
-	i = 0;
-	while (str)
-	{
-		colir[i] = str;
-		str = strtok(0, "\n");
-		i++;
-	}
-	colir[i] = 0;
+	colir = mystok(lineptr, "\n", colir);
 
 	return (colir);
 }
