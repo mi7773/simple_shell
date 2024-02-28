@@ -43,7 +43,7 @@ int nactive(char *av0, char **en)
 			myfree(ca, pa);
 			free(colir);
 			free(lineptr);
-			exit(EXIT_FAILURE);
+			exit(127);
 		}
 		j++;
 		i++;
