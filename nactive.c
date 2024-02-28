@@ -8,6 +8,7 @@
 /**
  * nactive - draft
  * @av0: draft
+ * @en: draft
  * Return: draft
  */
 int nactive(char *av0, char **en)
