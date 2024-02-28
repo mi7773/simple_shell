@@ -15,6 +15,7 @@ int nactive(char *av0, char **en)
 {
 	char *lineptr = 0, **ca = 0, **pa = 0, **colir;
 	int i = 1, j;
+	(void) av0;
 
 	lineptr = myread();
 	colir = coli(lineptr);
@@ -38,8 +39,10 @@ int nactive(char *av0, char **en)
 		}
 		else if (ca[0] != 0)
 		{
-			myerr(i, av0, ca[0]);
 			perror(ca[0]);
+			myfree(ca, pa);
+			free(colir);
+			free(lineptr);
 			exit(EXIT_FAILURE);
 		}
 		j++;

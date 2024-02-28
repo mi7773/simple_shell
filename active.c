@@ -13,6 +13,7 @@
 int active(char *av0, char **en)
 {
 	int i = 1;
+	(void) av0;
 
 	do {
 		char *lineptr = 0, **ca = 0, **pa = 0;
@@ -42,7 +43,6 @@ int active(char *av0, char **en)
 		}
 		else if (ca[0] != 0)
 		{
-			myerr(i, av0, ca[0]);
 			perror(ca[0]);
 		}
 		free(lineptr);
