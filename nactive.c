@@ -10,7 +10,7 @@
  * @av0: draft
  * Return: draft
  */
-int nactive(char *av0)
+int nactive(char *av0, char **en)
 {
 	char *lineptr = 0, **ca = 0, **pa = 0, **colir;
 	int i = 1, j;
@@ -28,7 +28,7 @@ int nactive(char *av0)
 		}
 		else if (mystat(ca, pa) == 0)
 		{
-			myexe(ca);
+			myexe(ca, en);
 		}
 		else if (mystat(ca, pa) == 2)
 		{

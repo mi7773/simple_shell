@@ -9,14 +9,14 @@
  * @av0: draft
  * Return: draft
  */
-int active(char *av0)
+int active(char *av0, char **en)
 {
 	int i = 1;
 
 	do {
 		char *lineptr = 0, **ca = 0, **pa = 0;
 
-		write(STDOUT_FILENO, "\n$ ", 3);
+		write(STDOUT_FILENO, "$ ", 3);
 		lineptr = mygetl();
 		if (lineptr == 0)
 		{
@@ -31,7 +31,7 @@ int active(char *av0)
 		}
 		else if (mystat(ca, pa) == 0)
 		{
-			myexe(ca);
+			myexe(ca, en);
 		}
 		else if (mystat(ca, pa) == 2)
 		{

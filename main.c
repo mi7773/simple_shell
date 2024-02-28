@@ -11,15 +11,14 @@
 int main(int ac, char **av, char **en)
 {
 	(void) ac;
-	(void) en;
 
 	if (isatty(STDIN_FILENO))
 	{
-		active(av[0]);
+		active(av[0], en);
 	}
 	else
 	{
-		nactive(av[0]);
+		nactive(av[0], en);
 	}
 
 	return (0);

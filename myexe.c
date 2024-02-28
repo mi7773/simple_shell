@@ -6,7 +6,7 @@
  * myexe - draft
  * @ca: draft
  */
-void myexe(char **ca)
+void myexe(char **ca, char **en)
 {
 	pid_t frpid;
 	int status;
@@ -17,7 +17,7 @@ void myexe(char **ca)
 	}
 	else if (frpid == 0)
 	{
-		execve(ca[0], ca, environ);
+		execve(ca[0], ca, en);
 	}
 	else
 	{
