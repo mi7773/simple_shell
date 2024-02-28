@@ -45,6 +45,7 @@ int nactive(char *av0, char **en)
 		myfree(ca, pa);
 	}
 	free(colir);
+	free(lineptr);
 
 	return (0);
 }
