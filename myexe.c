@@ -1,6 +1,8 @@
 #include <sys/wait.h>
 #include <unistd.h>
 #include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * myexe - draft
@@ -17,7 +19,13 @@ void myexe(char **ca)
 	}
 	else if (frpid == 0)
 	{
-		execve(ca[0], ca, environ);
+		int er;
+		er = execve(ca[0], ca, environ);
+		if (er == -1)
+		{
+			perror(ca[0]);
+			exit(EXIT_FAILURE);
+		}
 	}
 	else
 	{

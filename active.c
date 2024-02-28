@@ -42,7 +42,7 @@ int active(char *av0)
 		}
 		else if (ca[0] != 0)
 		{
-			perror(ca[0]);
+			myerr(i, av0, ca[0]);
 		}
 		free(lineptr);
 		myfree(ca, pa);
