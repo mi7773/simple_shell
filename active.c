@@ -11,7 +11,7 @@
  */
 int active(char *av0)
 {
-	int i = 1;
+	int i = 1, r = 0;
 
 	do {
 		char *lineptr = 0, **ca = 0, **pa = 0;
@@ -42,11 +42,12 @@ int active(char *av0)
 		else if (ca[0] != 0)
 		{
 			myerr(i, av0, ca[0]);
+			r = 127;
 		}
 		free(lineptr);
 		myfree(ca, pa);
 		i++;
 	} while (1);
 
-	return (0);
+	return (r);
 }

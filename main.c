@@ -10,17 +10,18 @@
  */
 int main(int ac, char **av, char **en)
 {
+	int r = 0;
 	(void) ac;
 	(void) en;
 
 	if (isatty(STDIN_FILENO))
 	{
-		active(av[0]);
+		r = active(av[0]);
 	}
 	else
 	{
-		nactive(av[0]);
+		r = nactive(av[0]);
 	}
 
-	return (0);
+	return (r);
 }
