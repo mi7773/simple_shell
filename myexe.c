@@ -20,13 +20,7 @@ void myexe(char **ca, char **en)
 	}
 	else if (frpid == 0)
 	{
-		int er;
-		er = execve(ca[0], ca, en);
-		if (er == -1)
-		{
-			perror(ca[0]);
-			exit(EXIT_FAILURE);
-		}
+		execve(ca[0], ca, en);
 	}
 	else
 	{
