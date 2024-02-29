@@ -33,8 +33,9 @@ char **cmd_lines(char *lineptr)
 int nactive(char *av0)
 {
 	int i = 0, r = 0;
+	char *lineptr = 0;
+	char **ca = 0, **pa = 0, **cla = 0;
 	(void) av0;
-	char *lineptr = 0, **ca = 0, **pa = 0, **cla = 0;
 
 	lineptr = myread();
 	cla = cmd_lines(lineptr);
