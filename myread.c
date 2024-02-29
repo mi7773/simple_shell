@@ -10,7 +10,7 @@
 char *myread(void)
 {
 	int i, j;
-	char buf[1024];
+	char buf[2048];
 	char *lineptr = 0;
 
 	j = 0;
