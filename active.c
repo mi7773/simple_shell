@@ -12,7 +12,6 @@
 int active(char *av0)
 {
 	int i = 1, r = 0;
-	(void) av0;
 
 	do {
 		char *lineptr = 0, **ca = 0, **pa = 0;
@@ -24,17 +23,14 @@ int active(char *av0)
 			write(STDOUT_FILENO, "\n", 1);
 			break;
 		}
-		ca = coarr(lineptr);
-		pa = patharr(ca[0]);
+		ca = coarr(lineptr), pa = patharr(ca[0]);
 		if (mystat(ca, pa) == 3)
 		{
 			r = 0;
 			penv();
 		}
 		else if (mystat(ca, pa) == 0)
-		{
 			r = myexe(ca, av0);
-		}
 		else if (mystat(ca, pa) == 2)
 		{
 			free(lineptr);
@@ -50,6 +46,5 @@ int active(char *av0)
 		myfree(ca, pa);
 		i++;
 	} while (1);
-
 	return (r);
 }
