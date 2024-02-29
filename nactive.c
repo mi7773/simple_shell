@@ -53,7 +53,9 @@ int nactive(char *av0)
 			free(cla);
 			free(lineptr);
 			myfree(ca, pa);
-			return (2);
+			if (i == 0)
+				return (0);
+			return (i + 1);
 		}
 		else if (ca[0] != 0)
 		{
