@@ -28,7 +28,7 @@ char **patharr(char *ca0)
 	i = findl(ca0);
 	str = strtok(en, ":");
 	j = 0;
-	while (str && ca0 != 0)
+	while (str && ca0 != 0) /* 0 && 1 = 0 */
 	{
 		k = findl(str);
 		pa[j] = (char *) malloc(sizeof(char) * (i + k + 2));

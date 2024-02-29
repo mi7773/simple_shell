@@ -8,6 +8,9 @@ void penv(void)
 {
 	int i, j;
 
+	if (!environ)
+		return;
+
 	i = 0;
 	while (environ[i])
 	{
