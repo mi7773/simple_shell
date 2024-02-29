@@ -12,16 +12,18 @@
  */
 int nactive(char *av0)
 {
-	char *lineptr = 0, **ca = 0, **pa = 0, **colir;
-	int i = 1, j, r = 0;
+	int i = 1, r = 0;
 	(void) av0;
 
-	lineptr = myread();
-	colir = coli(lineptr);
-	j = 0;
-	while (colir[j])
-	{
-		ca = coarr(colir[j]);
+	do {
+		char *lineptr = 0, **ca = 0, **pa = 0;
+
+		lineptr = mygetl();
+		if (lineptr == 0)
+		{
+			break;
+		}
+		ca = coarr(lineptr);
 		pa = patharr(ca[0]);
 		if (mystat(ca, pa) == 3)
 		{
@@ -33,6 +35,7 @@ int nactive(char *av0)
 		}
 		else if (mystat(ca, pa) == 2)
 		{
+			free(lineptr);
 			myfree(ca, pa);
 			break;
 		}
@@ -41,12 +44,10 @@ int nactive(char *av0)
 			perror(av0);
 			r = 127;
 		}
-		j++;
-		i++;
+		free(lineptr);
 		myfree(ca, pa);
-	}
-	free(colir);
-	free(lineptr);
+		i++;
+	} while (1);
 
 	return (r);
 }

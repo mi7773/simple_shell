@@ -20,7 +20,6 @@ void myexe(char **ca, char *av0);
 char *mygetl(void);
 char **mystok(char *s, char *d, char **r);
 char *myread(void);
-char **coli(char *lineptr);
 int myexit(char *ca0);
 int myen(char *ca0);
 void penv(void);
