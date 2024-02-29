@@ -8,8 +8,9 @@
  * myexe - draft
  * @ca: draft
  * @av0: draft
+ * Return: draft
  */
-void myexe(char **ca, char *av0)
+int myexe(char **ca, char *av0)
 {
 	pid_t frpid;
 	int status;
@@ -26,11 +27,15 @@ void myexe(char **ca, char *av0)
 		if (er == -1)
 		{
 			perror(av0);
-			exit(127);
 		}
 	}
 	else
 	{
 		wait(&status);
+		if (WEXITSTATUS(status) == 2)
+		{
+			return (2);
+		}
 	}
+	return (0);
 }

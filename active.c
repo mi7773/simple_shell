@@ -28,11 +28,12 @@ int active(char *av0)
 		pa = patharr(ca[0]);
 		if (mystat(ca, pa) == 3)
 		{
+			r = 0;
 			penv();
 		}
 		else if (mystat(ca, pa) == 0)
 		{
-			myexe(ca, av0);
+			r = myexe(ca, av0);
 		}
 		else if (mystat(ca, pa) == 2)
 		{
