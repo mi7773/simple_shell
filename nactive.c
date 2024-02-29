@@ -41,7 +41,7 @@ int nactive(char *av0)
 		}
 		else if (ca[0] != 0)
 		{
-			perror(av0);
+			myerr(i, av0, ca[0]);
 			r = 127;
 		}
 		free(lineptr);
