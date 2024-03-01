@@ -7,7 +7,7 @@ extern char **environ;
 
 int active(char *av0);
 int nactive(char *av0);
-char *getpath(void);
+char *getpath();
 char **patharr(char *ca0);
 char **coarr(char *buf);
 int findl(char *str);

@@ -4,7 +4,7 @@
  * getpath - draft
  * Return: draft
  */
-char *getpath(void)
+char *getpath()
 {
 	int i, j;
 
@@ -15,9 +15,8 @@ char *getpath(void)
 		j = 0;
 		while (environ[i][j] == "PATH="[j])
 		{
-			if ("PATH="[j] == '=')
+			if (environ[i][j] == '=')
 			{
-				printf("%s\n", &environ[i][1 + j]);
 				return (&environ[i][j + 1]);
 			}
 			j++;
