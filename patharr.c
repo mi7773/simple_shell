@@ -13,14 +13,12 @@ char **patharr(char *ca0)
 	int i, j, k;
 
 	i = findl(gpr);
-	printf("%d\n", i);
 	en = (char *) malloc(sizeof(char) * (i + 1));
 	if (en == 0)
 	{
 		return (0);
 	}
 	en = geten(gpr, en);
-	printf("%s\n", en);
 	i = cdel(gpr, ':');
 	pa = (char **) malloc(sizeof(char *) * (i + 2));
 	if (pa == 0)
