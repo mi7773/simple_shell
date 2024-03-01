@@ -44,7 +44,7 @@ int mystat(char **ca, char **pa)
 		{
 			if (stat(pa[i], &st) == 0)
 			{
-				chdir(cwdr), free(cwdr),ca[0] = pa[i];
+				chdir(cwdr), free(cwdr), ca[0] = pa[i];
 				return (0);
 			}
 			i++;
