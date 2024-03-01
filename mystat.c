@@ -13,7 +13,7 @@ int mystat(char **ca, char **pa)
 {
 	struct stat st;
 
-	
+
 	if (ca[0] == 0)
 	{
 		return (1);
