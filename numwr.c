@@ -25,7 +25,7 @@ void numwr(int i)
 	while (k)
 	{
 		m = (i / j) + 48;
-		write(STDOUT_FILENO, &m, 1);
+		write(STDERR_FILENO, &m, 1);
 		i = i % j;
 		j = j / 10;
 		k--;
