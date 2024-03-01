@@ -18,22 +18,22 @@ int mystat(char **ca, char **pa)
 	cwdr = getcwd(cwdr, size), chdir("/");
 	if (ca[0] == 0)
 	{
-		chdir(cwdr);
+		chdir(cwdr), free(cwdr);
 		return (1);
 	}
 	if (myen(ca[0]) == 3)
 	{
-		chdir(cwdr);
+		chdir(cwdr), free(cwdr);
 		return (3);
 	}
 	else if (myexit(ca[0]) == 2)
 	{
-		chdir(cwdr);
+		chdir(cwdr), free(cwdr);
 		return (2);
 	}
 	else if (stat(ca[0], &st) == 0)
 	{
-		chdir(cwdr);
+		chdir(cwdr), free(cwdr);
 		return (0);
 	}
 	else
@@ -44,7 +44,7 @@ int mystat(char **ca, char **pa)
 		{
 			if (stat(pa[i], &st) == 0)
 			{
-				chdir(cwdr), ca[0] = pa[i];
+				chdir(cwdr), free(cwdr),ca[0] = pa[i];
 				return (0);
 			}
 			i++;
