@@ -11,8 +11,10 @@ char *geten(char *gpr, char *en)
 	int i;
 
 	if (!gpr)
-		return (0);
-
+	{
+		*en = 0;
+		return (en);
+	}
 	i = 0;
 	while (gpr[i])
 	{
