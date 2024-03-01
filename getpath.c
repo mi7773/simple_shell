@@ -13,13 +13,14 @@ char *getpath(void)
 	while (environ[i])
 	{
 		j = 0;
-		while (environ[i][j] == "PATH"[j])
+		while (environ[i][j] == "PATH="[j])
 		{
-			j++;
-			if (environ[i][j] == '=')
+			if ("PATH="[j] == '=')
 			{
+				printf("%s\n", &environ[i][1 + j]);
 				return (&environ[i][j + 1]);
 			}
+			j++;
 		}
 		i++;
 	}
