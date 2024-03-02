@@ -24,6 +24,6 @@ char **mystok(char *s, char *d, char **r);
 char *myread(void);
 int myexit(char *ca0);
 int myen(char *ca0);
-void penv(void);
+void penv();
 
 #endif /* MAIN_H */
