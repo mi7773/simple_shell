@@ -26,7 +26,7 @@ int mystat(char **ca, char **pa)
 	{
 		return (2);
 	}
-	else if (stat(ca[0], &st) == 0)
+	else if ((ca[0][0] == '/' || ca[0][0] == '.') && stat(ca[0], &st) == 0)
 	{
 		return (0);
 	}
