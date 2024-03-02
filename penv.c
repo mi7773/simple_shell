@@ -4,7 +4,7 @@
 /**
  * penv - draft
  */
-void penv()
+void penv(void)
 {
 	int i, j;
 
